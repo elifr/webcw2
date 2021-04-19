@@ -49,29 +49,6 @@ router.get('/:id', async (req,res) => {
     
 });
 
-router.delete('/:username', async (req,res) => {
-    try {
-    const removedUser = await User.deleteOne({username: req.params.username});
-    res.json(removedUser);
-    } catch(err){
-    res.json({message: err});
-    }
-    
-});
-
-router.patch('/:username', async (req,res) => {
-    try {
-    const updatedUser = await User.updateOne({username: req.params.username}, 
-        {$set: { degree_length: req.body.degree_length }}
-        );
-
-    res.json(updatedUser);
-    } catch(err){
-    res.json({message: err});
-    }
-    
-});
-
 
 
 
