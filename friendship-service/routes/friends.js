@@ -6,7 +6,7 @@ const { default: axios } = require("axios");
 
 router.get('/', async (req,res) => {
     try {
-        const Friends = await Friends.find();
+        const Friends = await Friendship.find();
         res.json(Friends);
     } catch (err){
         res.json({message:err});
