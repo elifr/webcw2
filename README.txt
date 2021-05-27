@@ -10,4 +10,6 @@ Microservices:
 
     user-service:
         Interaction with the database for a specific user
-        
+    
+    interface-service:
+        Main react user interface service
