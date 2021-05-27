@@ -26,7 +26,7 @@ export const SidebarData = [
     },
     {
         title: 'About',
-        path: '/About',
+        path: '/about',
         icon: <BiIcons.BiHelpCircle />,
         cName: 'nav-text'
     },

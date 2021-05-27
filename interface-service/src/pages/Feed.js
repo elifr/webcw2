@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap'
+import Posts from './../components/Posts'
 
 function Feed() {
 
-    const messages = ""
+    const messages = "temp"; /*browserFeed()*/
 
     return (
-        <Container className="align-items-center d-flex" style={{height: "100vh" }}>
-
-            <div className='feed'>
+        <Container className='feed'>
+            <p>
                 <h1>Feed-</h1>
-                <>
-                    {messages}
+                {messages}
+                <Posts/>
+            </p>
 
-                </>
-            </div>
-            <Form >
+            <Form>
                 <Button type="submit">buttonText</Button>
             </Form>
         </Container>
@@ -26,31 +25,33 @@ function Feed() {
 
 
 
-/*
-const setText = () => {
-    setState({testContent: "this is info from the function"});
-}
 
-const getFeed = () => {
+
+
+
+
+
+
+
+
+
+
+
+const browserFeed = async () => {  
+    const response = await browse();
+    console.log(response)
+    /*setFeed(response.data.results);*/  // undefined
+    /*setIntialized(true);  */
+  };
+
+export const browse = () =>  {
     Axios.defaults.baseURL = "http://localhost:4444";
-    Axios.get('/posts').then((response) => {
-        console.log(response.data);
+    return Axios.get('/posts').catch((error) => {
+        return error;
     });
-}
+};
 
 
-const getBlogPost = () => {
-    Axios.defaults.baseURL = "http://localhost:4444";
-    Axios.get('/posts')
-    .then((response) => {
-        const data = response.data;
-        this.setState({ posts: data })
-        console.log("data found");
-    })
-    .catch(() => {
-        alert("cant find mongo db data")
-    })
-}*/
 
 
 export default Feed
