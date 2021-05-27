@@ -4,31 +4,22 @@ import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import Reports from './pages/Reports';
+import Feed from './pages/Feed';
+import Chats from './pages/Chats';
 import About from './pages/About';
+import Login from './pages/Login';
+import useLocalStorage from './hooks/useLocalStorage';
+import Dashboard from './Dashboard';
 
 function App() {
+    const [id, setId] = useLocalStorage('id')
+
     return (
-        <>
-        <Router>
-            <Navbar/>
-            <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/reports' component={Reports} />
-                <Route path='/about' component={About} />
-            </Switch>
-        </Router>
-        </>
-
-       // getFeed()
-    );
+        id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />
+    )
 }
 
-const getFeed = () => {
-    Axios.get("http:localhost:4444/posts").then((response) => {
-        console.log(response.data);
-    });
-}
+
 
 
 export default App;
