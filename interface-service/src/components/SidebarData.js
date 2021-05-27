@@ -8,19 +8,19 @@ import * as BiIcons from "react-icons/bi";
 export const SidebarData = [
     {
         title: 'Home',
-        path: '/',
+        path: '/home',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
     {
         title: 'Feed',
-        path: '/',
+        path: '/feed',
         icon: <MdIcons.MdPublic />,
         cName: 'nav-text'
     },
     {
-        title: 'Modules',
-        path: '/reports',
+        title: 'Chats',
+        path: '/chats',
         icon: <IoIcons.IoMdChatboxes />,
         cName: 'nav-text'
     },
