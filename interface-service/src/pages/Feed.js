@@ -2,6 +2,8 @@ import React, { Component, useState } from 'react'
 import Axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap'
 import Posts from './../components/Posts'
+import './../App.css';
+import $ from 'jquery'; 
 
 function Feed() {
 
@@ -10,17 +12,48 @@ function Feed() {
     const [username, setUserName] = useState("");
     /*const [userId, setId] = useState("");*/
 
+
     function getPost() {
         Axios.defaults.baseURL = "http://localhost:4444";
         Axios.get('/posts',  { crossdomain: true }).then(response => {
-            console.log(response.data.slice(-1)[0]);
+            let numPosts = Math.min(response.data.length, 5)
+
+            let posts = $("#posts");
+            console.log(posts.length);
+
+            var node = document.getElementById('posts');
+            node.innerHTML = "";
+
+            for (var p = 1; p <= numPosts; p++ ){
+
+                console.log("posts")
+                console.log(response.data.slice(-p)[0].title)
+                console.log(response.data.slice(-p)[0].text)
+
+                
+                let title = response.data.slice(-p)[0].title;
+                let content = response.data.slice(-p)[0].text;
+                let id = response.data.slice(-p)[0]._id;
+
+                let postClone = $("#templates #post-template").clone();
+                postClone.find("#post-title").text(title);
+                postClone.find("#post-text").text(content);
+
+                Axios.get('/posts/' + id,  { crossdomain: true }).then(response => {
+                    postClone.find("#post-userName").text("By: " + response.data.username);
+                    setUserName(response.data.username);
+                });
+
+
+                posts.append(postClone);
+
+            }
+
+
             setTitle(response.data.slice(-1)[0].title);
             setText(response.data.slice(-1)[0].text);
-            console.log(response.data);
-            let id = response.data[0]._id;
-            Axios.get('/posts/' + id,  { crossdomain: true }).then(response => {
-                setUserName(response.data.username);
-            });
+
+
         });
         }
 
@@ -42,61 +75,34 @@ function Feed() {
     }
 
   return (
-      <div>
-        <button onClick={setPost}>Make Post</button>
-        <button onClick={getPost}>Load Posts</button>
-        <h1>{title}</h1>
-        <h3>{"-" + text}</h3>
-        <h4> {username} </h4>
-      </div>
+
+        <body className='background'>
+
+            <div className='mainButtonFrame'>
+                <button className= 'mainButton' onClick={setPost}>Make Post</button>
+                <button className= 'mainButton' onClick={getPost}>Load Posts</button>
+            </div>
+
+            <div id="posts">
+            </div>
+
+            
+            <div id="templates" style= {{display: "none"}}>
+                <div id='post-template' className='feedPost'>
+                    <h1 id='post-title'/>
+                    <pg id='post-text' />
+                    <h6 id='post-userName' />
+                </div>
+            </div>
+            
+            
+        </body>
+
 
     )
   }
-/*
-    return (
-        <Container className='feed'>
-            <p>
-                <h1>Feed-</h1>
-                {messages}
-                <Posts/>
-            </p>
-
-            <Form>
-                <Button type="submit">buttonText</Button>
-            </Form>
-        </Container>
-
-    )
-}*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-const browserFeed = async () => {  
-    const response = await browse();
-    console.log(response)
-    /*setFeed(response.data.results);*/  // undefined
-    /*setIntialized(true);  
-  };
-
-export const browse = () =>  {
-    Axios.defaults.baseURL = "http://localhost:4444";
-    return Axios.get('/posts').catch((error) => {
-        return error;
-    });
-};
-*/
 
 
 
