@@ -9,7 +9,7 @@
 
 .home, .feed, .chats, .about {
     display: flex;
-    height: 99vh;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
@@ -32,26 +32,55 @@
 }
 
 .mainButtonFrame {
+    color: white;
     text-align: center;
     padding: 0px;
     width: 100vw;
-    height: 50px;    
     background-color: #0043be;
-
 }
 
 .mainButton {
-    background-color: cornflowerblue;
     position: relative;
     padding: 2px;
     margin: 5px;
 
 }
 
+/*#0043be*/
+
+.frameBack {
+    background-color: #0043be;
+}
+
+
 .background {
     background-color: cornflowerblue;
     width: 100vw;
     height: 100vh;
     padding: 0px;
+    margin: 0px;
+}
+
+.newPost {
+    display:grid;
+    align-items: center;
+    align-self: center;
+    justify-content: left;
+    text-align: center;
+    display: grid;
+    width: 55vw;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sepButton {
+    display: grid;
+    align-items: right;
+    align-self: right;
+    justify-content: right;
+    text-align: right;
+    position: right;
+    width: 100vw;
+    padding: 20px;
     margin: 0px;
 }

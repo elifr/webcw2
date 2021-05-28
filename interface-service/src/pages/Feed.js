@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useRef } from 'react'
 import Axios from 'axios';
 import { Container, Form, Button } from 'react-bootstrap'
 import Posts from './../components/Posts'
@@ -10,8 +10,14 @@ function Feed() {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [username, setUserName] = useState("");
+    const idRef = useRef()
     /*const [userId, setId] = useState("");*/
 
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        console.log(idRef.current.value)
+    }
 
     function getPost() {
         Axios.defaults.baseURL = "http://localhost:4444";
@@ -78,11 +84,39 @@ function Feed() {
 
         <body className='background'>
 
-            <div className='mainButtonFrame'>
-                <button className= 'mainButton' onClick={setPost}>Make Post</button>
-                <button className= 'mainButton' onClick={getPost}>Load Posts</button>
-            </div>
 
+            <div className='frameBack'>
+
+            <Container className='mainButtonFrame'>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className='newPost'>
+                        <Form.Label> Create New Post </Form.Label>
+                    </Form.Group>
+
+                    <Form.Group  className='newPost'>
+                        <Form.Label> Title:</Form.Label>
+                        <Form.Control class="col-xs-3" type="text" ref={idRef} required />
+
+                        <Form.Label> Message:</Form.Label>
+                        <Form.Control class="col-xs-3" type="text" ref={idRef} required />
+                    </Form.Group>
+
+                    <Form.Group className='newPost'>
+                    <Button type="submit" >Make Post</Button>
+                    </Form.Group>
+                </Form>
+
+            </Container>
+
+
+            
+             </div>
+                <Form className='sepButton'> 
+                    <Form.Group className='newPost'>
+                        <Button class= 'btn-block' onClick={getPost} >Load Posts</Button>
+
+                    </Form.Group>
+                </Form>
             <div id="posts">
             </div>
 
