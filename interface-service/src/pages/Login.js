@@ -10,9 +10,6 @@ export default function Login({ onIdSubmit }) {
         e.preventDefault()
 
         onIdSubmit(idRef.current.value)
-
-
-
     }
 
     function createNewId() {
