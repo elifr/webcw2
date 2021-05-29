@@ -84,10 +84,7 @@ function Feed() {
   return (
 
         <body className='background'>
-
-
             <div className='frameBack'>
-
             <Container className='mainButtonFrame'>
                 <Form onSubmit={makePost}>
                     <Form.Group className='newPost'>
@@ -117,9 +114,9 @@ function Feed() {
 
                     </Form.Group>
                 </Form>
+
             <div id="posts">
             </div>
-
             
             <div id="templates" style= {{display: "none"}}>
                 <div id='post-template' className='feedPost'>
@@ -128,7 +125,6 @@ function Feed() {
                     <p id='post-userName' className='postContent'/>
                 </div>
             </div>
-            
             
         </body>
 
