@@ -16,6 +16,12 @@
     background-color: cornflowerblue;
 }
 
+.aboutContent{
+    height: 100%;
+    background-color: cornflowerblue;
+    color: white;
+}
+
 .feedPost {
     display:grid;
     align-items: center;
@@ -91,4 +97,10 @@
 .postContent {
     padding: 0px;
     margin: 0px;
+}
+
+.aboutSubContent{
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
 }
