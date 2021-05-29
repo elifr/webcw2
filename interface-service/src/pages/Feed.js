@@ -100,7 +100,7 @@ function Feed() {
                     </Form.Group>
 
                     <Form.Group className='newPost'>
-                    <Button type="submit" >Make Post</Button>
+                    <Button type="submit" >Make Public Post</Button>
                     </Form.Group>
                 </Form>
 

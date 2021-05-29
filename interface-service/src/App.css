@@ -108,3 +108,37 @@
     color: white;
     
 }
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.dd-wrapper {
+    display: flex;
+    min-height: 38px;
+    flex-wrap: wrap;
+}
+
+.dd-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+.dd-list {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.dd-list-item {
+    width: 50%;
+}
