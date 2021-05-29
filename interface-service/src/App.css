@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.home, .feed, .chats, .about {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: cornflowerblue;
+}
+
+.aboutContent{
+    color: white;
+    width: 90%;
+    padding: 15px;
+    text-align: center;
+}
+
+.feedPost {
+    display:grid;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 97w;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-bottom: 5px;
+
+    border: 5px solid #0043be;
+    background-color: cornflowerblue;
+}
+
+.mainButtonFrame {
+    color: white;
+    text-align: center;
+    padding: 0px;
+    width: 100vw;
+    background-color: #0043be;
+}
+
+.mainButton {
+    position: relative;
+    padding: 2px;
+    margin: 5px;
+
+}
+
+/*#0043be*/
+
+.frameBack {
+    background-color: #0043be;
+}
+
+
+.background {
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+
+    height: 100vh;
+    min-height: 100%;
+    background-color: cornflowerblue;
+}
+
+.newPost {
+    display:grid;
+    align-items: center;
+    align-self: center;
+    justify-content: left;
+    text-align: center;
+    display: grid;
+    width: 55vw;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sepButton {
+    display: grid;
+    align-items: right;
+    align-self: right;
+    justify-content: right;
+    text-align: right;
+    position: right;
+    width: 100vw;
+    padding: 20px;
+    margin: 0px;
+}
+
+.postContent {
+    padding: 0px;
+    margin: 0px;
+}
+
+.aboutSubContent{
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+    
+}
