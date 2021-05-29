@@ -27,17 +27,15 @@ function Feed() {
             let numPosts = Math.min(response.data.length, 5)
 
             let posts = $("#posts");
-            console.log(posts.length);
 
             var node = document.getElementById('posts');
             node.innerHTML = "";
 
             for (var p = 1; p <= numPosts; p++ ){
 
-                console.log("posts")
+                /*console.log("posts")
                 console.log(response.data.slice(-p)[0].title)
-                console.log(response.data.slice(-p)[0].text)
-
+                console.log(response.data.slice(-p)[0].text)*/
                 
                 let title = response.data.slice(-p)[0].title;
                 let content = response.data.slice(-p)[0].text;
@@ -66,6 +64,7 @@ function Feed() {
         }
 
     function setPost() {
+        /*check userId if not found then create alert no not sigend in?*/
         const userId = "607d7a52ac3ab838bc665a75";
 
         Axios.defaults.baseURL = "http://localhost:4444";
@@ -114,7 +113,7 @@ function Feed() {
              </div>
                 <Form className='sepButton'> 
                     <Form.Group className='newPost'>
-                        <Button class= 'btn-block' onClick={getPost} >Load Posts</Button>
+                        <Button class= 'btn-block' onClick={getPost} >Load Recent Posts</Button>
 
                     </Form.Group>
                 </Form>
@@ -124,9 +123,9 @@ function Feed() {
             
             <div id="templates" style= {{display: "none"}}>
                 <div id='post-template' className='feedPost'>
-                    <h1 id='post-title'/>
-                    <pg id='post-text' />
-                    <h6 id='post-userName' />
+                    <h4 id='post-title'className='postContent'/>
+                    <p id='post-text' className='postContent'/>
+                    <p id='post-userName' className='postContent'/>
                 </div>
             </div>
             

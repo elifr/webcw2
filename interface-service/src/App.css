@@ -25,7 +25,10 @@
 
     width: 97w;
     padding: 0px;
-    margin: 10px;
+    margin-top: 0px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-bottom: 5px;
 
     border: 5px solid #0043be;
     background-color: cornflowerblue;
@@ -82,5 +85,10 @@
     position: right;
     width: 100vw;
     padding: 20px;
+    margin: 0px;
+}
+
+.postContent {
+    padding: 0px;
     margin: 0px;
 }
