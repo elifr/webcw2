@@ -10,13 +10,15 @@ function Feed() {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [username, setUserName] = useState("");
-    const idRef = useRef()
+    const titleRef = useRef()
+    const contentRef = useRef()
     /*const [userId, setId] = useState("");*/
 
-    function handleSubmit(e) {
+    function makePost(e) {
         e.preventDefault()
-
-        console.log(idRef.current.value)
+        setPost()
+        console.log(titleRef.current.value)
+        console.log(contentRef.current.value)
     }
 
     function getPost() {
@@ -65,16 +67,16 @@ function Feed() {
 
     function setPost() {
         const userId = "607d7a52ac3ab838bc665a75";
-        const newTitle = "title two";
-        const newText = "new content of post";
 
         Axios.defaults.baseURL = "http://localhost:4444";
         Axios.post('/posts',  {
 
             UserId: userId,
-            title: newTitle,
-            text: newText,
+            title: titleRef.current.value,
+            text: contentRef.current.value,
         }).then(response => {
+            document.getElementById("titleField").value = "";
+            document.getElementById("messageField").value = "";
             console.log("post made");
         });
 
@@ -88,17 +90,17 @@ function Feed() {
             <div className='frameBack'>
 
             <Container className='mainButtonFrame'>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={makePost}>
                     <Form.Group className='newPost'>
                         <Form.Label> Create New Post </Form.Label>
                     </Form.Group>
 
                     <Form.Group  className='newPost'>
                         <Form.Label> Title:</Form.Label>
-                        <Form.Control class="col-xs-3" type="text" ref={idRef} required />
+                        <Form.Control class="col-xs-3" type="text" id = "titleField" ref={titleRef} required />
 
                         <Form.Label> Message:</Form.Label>
-                        <Form.Control class="col-xs-3" type="text" ref={idRef} required />
+                        <Form.Control class="col-xs-3" type="text" id = "messageField" ref={contentRef} required />
                     </Form.Group>
 
                     <Form.Group className='newPost'>
@@ -107,7 +109,6 @@ function Feed() {
                 </Form>
 
             </Container>
-
 
             
              </div>
