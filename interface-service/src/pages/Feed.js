@@ -65,10 +65,30 @@ function Feed() {
 
     function setPost() {
         /*check userId if not found then create alert no not sigend in?*/
-        const userId = "607d7a52ac3ab838bc665a75";
+        var userId = "";
+
+        console.log("here out");
+        Axios.defaults.baseURL = "http://localhost:3000";
+        Axios.get('/api/users/currentuser', { 
+            withCredentials: true, 
+            crossdomain: true,
+           /* headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                } */
+            })
+        .then(response => {
+            console.log("here in");
+            console.log(response.data.id);
+            userId = response.data.id;
+        })
+        .catch(err => {console.log(err);
+        });
 
         Axios.defaults.baseURL = "http://localhost:4000";
         Axios.post('/posts',  {
+            withCredentials: true, 
+            crossdomain: true,
 
             UserId: userId,
             title: titleRef.current.value,
@@ -77,6 +97,8 @@ function Feed() {
             document.getElementById("titleField").value = "";
             document.getElementById("messageField").value = "";
             console.log("post made");
+        })
+        .catch(err => {console.log(err);
         });
 
     }

@@ -9,7 +9,8 @@ const app = express();
 const mongoose = require("mongoose");
 const PostsRoute = require("./routes/posts");
 
-app.use(cors());
+app.use(cors({credentials: true, origin: "http://localhost:8000"}));
+
 
 app.use(bodyParser.json());
 
