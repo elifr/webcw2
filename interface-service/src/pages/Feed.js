@@ -22,7 +22,7 @@ function Feed() {
     }
 
     function getPost() {
-        Axios.defaults.baseURL = "http://localhost:4444";
+        Axios.defaults.baseURL = "http://localhost:4000";
         Axios.get('/posts',  { crossdomain: true }).then(response => {
             let numPosts = Math.min(response.data.length, 5)
 
@@ -67,7 +67,7 @@ function Feed() {
         /*check userId if not found then create alert no not sigend in?*/
         const userId = "607d7a52ac3ab838bc665a75";
 
-        Axios.defaults.baseURL = "http://localhost:4444";
+        Axios.defaults.baseURL = "http://localhost:4000";
         Axios.post('/posts',  {
 
             UserId: userId,

@@ -1,20 +1,52 @@
 import React, { useRef } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 import { v4 as uuidV4} from 'uuid'
+import Axios from 'axios';
+import Dashboard from './../Dashboard'
+import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 
 export default function Login({ onIdSubmit }) {
 
-    const idRef = useRef()
+    const userRef = useRef()
+    const passRef = useRef()
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        onIdSubmit(idRef.current.value)
+        console.log(userRef.current.value)
+        console.log(passRef.current.value)
+        signIn();
+
+        <Route path="/home" component={Dashboard} /> 
+
+
     }
 
+    function signIn() {
+        /*check userId if not found then create alert no not sigend in?*/
+        
+        var userName = userRef.current.value
+        var pass = passRef.current.value
+
+        Axios.defaults.baseURL = "http://localhost:3000";
+        Axios.post('/api/users/signin',  {
+
+            username: userName,
+            password: pass,
+
+        }).then(response => {
+            console.log("user signed in");
+            onIdSubmit(userRef.current.value)
+        });
+
+    }
+
+
+
+/*
     function createNewId() {
         onIdSubmit(uuidV4())
-    }
+    }*/
 
 
     return (
@@ -25,12 +57,12 @@ export default function Login({ onIdSubmit }) {
             <Form onSubmit={handleSubmit}>
                 <Form.Group>
                     <Form.Label> Enter Your Student Username</Form.Label>
-                    <Form.Control type="text" ref={idRef} required />
+                    <Form.Control type="text" ref={userRef} required />
                     <Form.Label> Enter Your Uni Chat Password</Form.Label>
-                    <Form.Control type="text" ref={idRef} required />
+                    <Form.Control type="text" ref={passRef} required />
                 </Form.Group>
                 <Button type="submit" className = "mr-2">Login</Button>
-                <Button onClick={createNewId} variant="secondary"> Sign Up</Button>
+                <Button variant="secondary"> Sign Up</Button>
             </Form>
         </Container>
         </body>

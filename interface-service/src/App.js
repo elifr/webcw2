@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 /*import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';*/
 import './App.css';
 import Login from './pages/Login';
-import useLocalStorage from './hooks/useLocalStorage';
+//import useLocalStorage from './hooks/useLocalStorage';
 import Dashboard from './Dashboard';
 
 function App() {
-    const [id, setId] = useLocalStorage('id')
+    const [id, setId] = useState()
 
     return (
-        //<Login onIdSubmit={setId} />
+        //<Login />
+        //<Dashboard/>
      id ? <Dashboard id={id} /> : <Login onIdSubmit={setId} />
     )
 }

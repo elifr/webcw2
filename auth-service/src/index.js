@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
@@ -10,6 +11,7 @@ const signUpRouter = require("./routes/signup");
 const errorHandler = require("./middlewares/error-handler");
 
 const app = express();
+app.use(cors());
 app.set("trust proxy", true);
 app.use(bodyParser.json());
 //initiating the cookie session library
