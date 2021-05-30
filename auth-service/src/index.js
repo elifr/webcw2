@@ -11,7 +11,7 @@ const signUpRouter = require("./routes/signup");
 const errorHandler = require("./middlewares/error-handler");
 
 const app = express();
-app.use(cors());
+app.use(cors({credentials: true, origin: "http://localhost:8000"}));
 app.set("trust proxy", true);
 app.use(bodyParser.json());
 //initiating the cookie session library
