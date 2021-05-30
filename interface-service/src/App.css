@@ -116,6 +116,31 @@
     padding: 0 20px;
 }
 
+.dropBox {   
+    display:grid;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 97w;
+    padding: px;
+    margin-top: 0px;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    margin-bottom: 5px;
+
+    color: white;
+    border: 5px solid #0043be;
+    background-color: #0043be;
+
+}
+
+.drop-option {
+    width: 50%;
+    background: red;
+}
+
 .dd-wrapper {
     display: flex;
     min-height: 38px;

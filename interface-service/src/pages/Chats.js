@@ -29,10 +29,12 @@ function Chats() {
 
 
     return (
+        <body className='background'>
+            <div className='dropBox'>
+                <Dropdown title=" > Select Group Chat < " items={items} />
+            </div>
+        </body>
 
-        <div className='container'>
-            <Dropdown title="Select Group Chat" items={items} />
-        </div>
         /*
         <body className='background'>
                    <div className = "container">
