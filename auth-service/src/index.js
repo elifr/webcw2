@@ -8,7 +8,6 @@ const currentUserRouter = require("./routes/current-user");
 const signInRouter = require("./routes/signin");
 const signOutRouter = require("./routes/signout");
 const signUpRouter = require("./routes/signup");
-const errorHandler = require("./middlewares/error-handler");
 
 const app = express();
 app.use(cors({credentials: true, origin: "http://localhost:8000"}));
@@ -38,7 +37,6 @@ app.use(signInRouter);
 app.use(signOutRouter);
 app.use(signUpRouter);
 
-app.use(errorHandler);
 
 //connecting to the database
 const start = async () => {
