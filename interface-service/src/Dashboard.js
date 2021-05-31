@@ -18,13 +18,14 @@ export default function Dashboard({ id }) {
                 <Route path='/feed' component={Feed} />
                 <Route path='/chats' component={Chats} />
                 <Route path='/about' component={About} />
-                <Route render={() => <Redirect to={{pathname: "/home"}} />} />
             </Switch>
         </Router>
         </>
 
     );
 }
+
+//<Route render={() => <Redirect to={{pathname: "/home"}} />} />
 
 
 

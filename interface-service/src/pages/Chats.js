@@ -66,15 +66,23 @@ function Chats() {
             id:3,
             value: 'three',
         },
-    ]*/
+    ]
+    
+                <div className='dropBox'>
+                <Button onClick={getChatGroups} > Refresh Modules list </Button>
+                <Dropdown items={moduleObj} />
+
+            </div>
+        */
 
 
 
     return (
         <body className='background'>
-            <div className='dropBox'>
-                <Button onClick={getChatGroups} > Refresh Modules list </Button>
-                <Dropdown items={moduleObj} />
+
+            <div>
+            <a className='dropBox' href="http://localhost:7000/lobby">Take Me to Modules Chats</a>
+
             </div>
         </body>
 

@@ -183,6 +183,26 @@ a {
 	width: 100%;
 }
 
+.dropBox {   
+    display:grid;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 97w;
+    padding: px;
+    margin-top: 0px;
+    margin-left: 0vw;
+    margin-right: 0vw;
+    margin-bottom: 5px;
+
+    color: white;
+    border: 5px solid #0043be;
+    background-color: #0043be;
+
+}
+
 @media (max-width: 700px) {
 	.chat-main {
 		display: block;

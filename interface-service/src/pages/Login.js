@@ -34,6 +34,9 @@ export default function Login({ onIdSubmit }) {
             username: userName,
             password: pass,
 
+        },
+        {
+            withCredentials: true,
         }).then(response => {
             console.log("user signed in");
             onIdSubmit(userRef.current.value)
