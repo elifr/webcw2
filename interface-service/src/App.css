@@ -137,8 +137,9 @@
 }
 
 .drop-option {
-    width: 50%;
-    background: red;
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 .dd-wrapper {

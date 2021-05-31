@@ -19,11 +19,11 @@ function Dropdown({ title, items = [], multiSelect = false}) {
             onKeyPress={() => toggle(!open)}
             onClick={() => toggle(!open)}
             >
-                <div className="dd-header__title">
-                    <p className="dd-header__title--bold">{title}</p>
+                <div className="drop-option">
+                    <p>{title}</p>
                 </div>
-                <div className="dd-header__action">
-                    <p>{open ? 'Close' : 'Open'}</p> 
+                <div className="drop-option">
+                    <p>{open ? 'Pick Group Chat to Join:' : '> Select Group Chat <'}</p> 
                 </div>
             </div>
             { open && (
