@@ -1,7 +1,6 @@
-import React, { Component, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Axios from "axios";
 import { Container, Form, Button } from "react-bootstrap";
-import Posts from "./../components/Posts";
 import "./../App.css";
 import $ from "jquery";
 

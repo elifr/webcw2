@@ -136,6 +136,13 @@
 
 }
 
+.logout {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .drop-option {
     display: flex;
     text-align: center;
@@ -152,6 +159,9 @@
     
 }
 
+.title {
+    color: white;
+}
 .dd-wrapper {
     display: flex;
     min-height: 38px;

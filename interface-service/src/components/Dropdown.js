@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
 
 function Dropdown({ title, items = [], multiSelect = false}) {
     const [open, setOpen] = useState(false);
