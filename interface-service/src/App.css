@@ -142,6 +142,16 @@
     align-items: center;
 }
 
+.drop-title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: #1676f3;
+    border: 5px solid #0043be;
+    
+}
+
 .dd-wrapper {
     display: flex;
     min-height: 38px;

@@ -9,7 +9,8 @@ import Dropdown from '../components/Dropdown';
 function Chats() {
 
     var [userModules, setModules] = useState("");
-    var [moduleObj, setObjects] = useState("");
+    var [moduleObj, setObjects] = useState([]);
+
 
 
 
@@ -50,23 +51,8 @@ function Chats() {
         }
 
         setObjects(moduleObjects);
-
-        //return (moduleObjects)
-        /*
-            [
-            {
-                id:1,
-                value: 'onte',
-            },
-            {
-                id:2,
-                value: 'two',
-            },        {
-                id:3,
-                value: 'three',
-            },
-        ])*/
     };
+
 
     /*[
         {
@@ -87,7 +73,7 @@ function Chats() {
     return (
         <body className='background'>
             <div className='dropBox'>
-                <Button onClick={getChatGroups} > button </Button>
+                <Button onClick={getChatGroups} > Refresh Modules list </Button>
                 <Dropdown items={moduleObj} />
             </div>
         </body>

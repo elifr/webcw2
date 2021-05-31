@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 
 function Dropdown({ title, items = [], multiSelect = false}) {
     const [open, setOpen] = useState(false);
@@ -16,14 +17,14 @@ function Dropdown({ title, items = [], multiSelect = false}) {
             tabIndex={0}
             className="dd-header"
             role="button"
-            onKeyPress={() => toggle(!open)}
-            onClick={() => toggle(!open)}
+            onKeyPress={() => toggle(open)}
+            onClick={() => toggle(open)}
             >
                 <div className="drop-option">
                     <p>{title}</p>
                 </div>
-                <div className="drop-option">
-                    <p>{open ? 'Pick Group Chat to Join:' : '> Select Group Chat <'}</p> 
+                <div className="drop-title">
+                    <p>{open ? 'Module Chats Avalible:' : '> Open Modules List <'}</p> 
                 </div>
             </div>
             { open && (
