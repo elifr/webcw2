@@ -9,10 +9,13 @@ import Dropdown from '../components/Dropdown';
 function Chats() {
 
     var [userModules, setModules] = useState("");
+    var [moduleObj, setObjects] = useState("");
 
 
 
     function getChatGroups () {
+
+
 
         var moduleObjects = [];
 
@@ -21,7 +24,6 @@ function Chats() {
           withCredentials: true,
         })
           .then((response) => {
-            console.log(response.data.modules);
             setModules(response.data.modules);
           })
           .catch((err) => {
@@ -30,17 +32,14 @@ function Chats() {
 
 
         console.log("start");
-        console.log(userModules);
-       // console.log(userModules.get("length"));
-        
-       // userModules = userModules.toString();
 
         console.log(userModules);
-       // console.log("hree")
-       // userModules = userModules.repalce("[],"")
-       // userModules = userModules.split(",");
 
-/*
+        console.log(userModules.length);
+
+        console.log(userModules[1]);
+
+
         for (var m = 1; m <= userModules.length; m++) {
             console.log("heredd");
             moduleObjects.push({
@@ -48,9 +47,12 @@ function Chats() {
                 value: userModules[m-1],
             })
             console.log(moduleObjects);
-        }*/
+        }
 
-        return (userModules)/*
+        setObjects(moduleObjects);
+
+        //return (moduleObjects)
+        /*
             [
             {
                 id:1,
@@ -85,7 +87,8 @@ function Chats() {
     return (
         <body className='background'>
             <div className='dropBox'>
-                <Dropdown onClick={getChatGroups} items={items} />
+                <Button onClick={getChatGroups} > button </Button>
+                <Dropdown items={moduleObj} />
             </div>
         </body>
 
