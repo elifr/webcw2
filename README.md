@@ -9,7 +9,9 @@ In order to start the program, the following commands must be run:
 
 ```cd ./interface-service```
 
-```npm install react --save```
+```(/interface-service) npm install react --save```
+
+```cd ../```
 
 ```docker-compose build```
 
