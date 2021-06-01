@@ -18,7 +18,7 @@ router.post(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      throw new Error("Invalid email or password");
+      return res.status(400).send("Invalid Password and/or email");
     }
 
     const { username, password, forename, surname, modules } = req.body;
@@ -28,7 +28,7 @@ router.post(
     //if there exists a user in the database, throw error
     if (existingUser) {
       console.log("Email in use");
-      return res.send({});
+      return res.status(409).send("Error, account already Exists");
     }
 
     // Create a new user

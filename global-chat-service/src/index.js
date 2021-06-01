@@ -10,7 +10,8 @@ const indexRouter = require("./routes/chat");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({credentials: true, origin: "http://localhost:8000"}));
+
 
 app.use(bodyParser.json());
 

@@ -16,20 +16,20 @@ function Dropdown({ title, items = [], multiSelect = false}) {
             tabIndex={0}
             className="dd-header"
             role="button"
-            onKeyPress={() => toggle(!open)}
-            onClick={() => toggle(!open)}
+            onKeyPress={() => toggle(open)}
+            onClick={() => toggle(open)}
             >
-                <div className="dd-header__title">
-                    <p className="dd-header__title--bold">{title}</p>
+                <div className="drop-option">
+                    <p>{title}</p>
                 </div>
-                <div className="dd-header__action">
-                    <p>{open ? 'Close' : 'Open'}</p> 
+                <div className="drop-title">
+                    <p>{open ? 'Module Chats Avalible:' : '> Open Modules List <'}</p> 
                 </div>
             </div>
             { open && (
                 <ul className="dd-list">
                     {items.map(item => (
-                        <li className="dd-list-item" key={item.id}>
+                        <li className="drop-option" key={item.id}>
                             <button type="button" onClick={() => handleOnClick(item)}>
                                 <span>{item.value}</span>
                             </button>

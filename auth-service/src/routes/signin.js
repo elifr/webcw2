@@ -27,7 +27,7 @@ router.post(
 
     //throw error on invalid password and email
     if (!errors.isEmpty()) {
-      throw new Error("Invalid email or password");
+      return res.status(400).send("Password and/or email cannot be empty");
     }
 
     //get email and password from the body of the form
@@ -36,7 +36,7 @@ router.post(
     //check if the user already exists
     const existingUser = await User.findOne({ username });
     if (!existingUser) {
-      throw new Error("Account does not exist");
+      return res.status(400).send("Account does not exist");
     }
 
     //creating a jwt token upon login
@@ -61,7 +61,10 @@ router.post(
         req.session = {
           jwt: userJwt,
         };
-        res.status(200).send(existingUser);
+        return res.status(200).send(existingUser);
+      }
+      else{
+        return res.status(401).send("Password does not match")
       }
     });
   }

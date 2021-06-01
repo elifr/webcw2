@@ -2,12 +2,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 
+const path = require("path");
+
 const cors = require("cors");
 const app = express();
 const mongoose = require("mongoose");
 const PostsRoute = require("./routes/posts");
 
-app.use(cors());
+app.use(cors({credentials: true, origin: "http://localhost:8000"}));
+
 
 app.use(bodyParser.json());
 
