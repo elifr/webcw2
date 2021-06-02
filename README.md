@@ -16,3 +16,11 @@ In order to start the program, the following commands must be run:
 ```docker-compose build```
 
 ```docker-compose up```
+
+Two accounts are already prepared for chat testing:
+
+username: test@testmail.com
+password: password
+
+username:anothertest@testmail.com
+password:password

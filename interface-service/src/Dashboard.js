@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Feed from './pages/Feed';
 import Chats from './pages/Chats';
 import About from './pages/About';
+import Signup from './pages/Signup'
 
 export default function Dashboard({ id }) {
     return (
@@ -17,6 +18,7 @@ export default function Dashboard({ id }) {
                 <Route path='/feed' component={Feed} />
                 <Route path='/chats' component={Chats} />
                 <Route path='/about' component={About} />
+                <Route path='/signup' component={Signup} />
                 <Route render={() => <Redirect to={{pathname: "/home"}} />} />
             </Switch>
         </Router>

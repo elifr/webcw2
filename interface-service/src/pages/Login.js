@@ -48,6 +48,7 @@ export default function Login({ onIdSubmit }) {
 
     }
 
+    // doesn't do anything
     function signUp() {
         var userName = userRef.current.value
         var pass = passRef.current.value
@@ -99,6 +100,7 @@ export default function Login({ onIdSubmit }) {
                     <Form.Control type="password" ref={passRef} required />
                 </Form.Group>
                 <Button type="submit" className = "mr-2">Login</Button>
+                {/* Make this redirect to the signup page */}
                 <Button onClick={signUp} variant="secondary"> Sign Up</Button>
             </Form>
         </Container>
